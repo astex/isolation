@@ -1,0 +1,21 @@
+<form class="rules">
+  <select name="pieces" id="pieces">
+    <option value="default" disabled selected>
+      Which pieces should each player control?
+    </option>
+    <option value="onequeen">
+      One Queen: Each player plays with one queen each.
+    </option>
+    <option value="twokings">
+      Two Kings: Each player plays with two kings each.
+    </option>
+  </select>
+  <fieldset>
+    <legend>Dimensions</legend>
+    <label for="x">X</label>
+    <input name="x" id="x" value=5>
+    <label for="y">Y</label>
+    <input name="y" id="y" value=5>
+  </fieldset>
+  <input type="submit" value="Play">
+</form>
