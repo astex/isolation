@@ -37,11 +37,13 @@
   };
 
   // A set of options describing how to play the game.
-  var rules = {
+  var default_rules = {
     pieces: null,
     x: 5,
     y: 5
   };
+  var rules = {};
+  var reset_rules = function() { rules = $.extend({}, default_rules); }
 
   // The game board.
   var board = [];
@@ -54,7 +56,10 @@
 
   var ruleView = new View({
     templateUrl: '/templates/rules.html',
-    load: function(s) { ruleView.render(); },
+    load: function(s) {
+      reset_rules();
+      ruleView.render();
+    },
     bindEvents: function(s) {
       // Bind rule changes to the data model.
       $('form.rules').on('change', 'input, select', function(e) {
